@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+html {
+  font-size: 100%;
+}
+body {
+  color: #383e45;
+  font-size: 0.9rem;    /*emは親要素のフォントサイズを1とする単位です。つまり、同じ1emでも親要素のフォントサイズによって大きさが変わります。emが親要素のフォントサイズを基準とするのに対し、remはルート要素のフォントサイズを基準にします。*/
+}
+a {
+  text-decoration: none;
+} 
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+.site-title {
+  width: 120px;
+  line-height: 1px;
+  padding: 10px 0;
+}
+.site-title a {
+  display: block;
+}
+/* h2タグ用 */
+.section-title {
+  display: inline-block;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 60px;
+  border-bottom: solid 1px #383e45;
+}
+/* h3タグ用 */
+.content-title {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+/* 画面の最大幅を指定。共通で使用します */
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto 100px auto;
+  padding: 0 4%;
+  text-align: center;
+}
+/* ---------------------------------------------------------
+  ヘッダー
+  ---------------------------------------------------------*/
+#header {
+  display: flex;        /* h1とnavを横並びに配置します */
+  justify-content: space-between; /* 両端に揃えます */
+  align-items: center;    /* 高さを中央で揃えます */
+  margin: 0 auto;
+  }
+#header ul {
+  display: flex;
+  padding: 10px 0;
+}  
+#header li {
+  margin-left: 30px;
+}
+#header li a {
+  color: #24292e;
+}
+#header li a:hover {
+  opacity: 0.7;
+}
+/* -------------------------------------------------------
+  メインビジュアル
+---------------------------------------------------------*/
+#mainvisual {
+  margin-bottom: 80px;
+}
+#mainvisual img {
+  width: 100%;
+  max-width: 1920px;  /* 画像の横幅サイズに合わせて最大幅を指定します */
+  height: 600px;
+  object-fit: cover;  /* 横幅は画面サイズに合わせて伸縮します */
+}
+
+@media screen and (max-width: 600px) {
+  /*----------------------------------------------------------
+    Mainvisual
+  ----------------------------------------------------------- */
+  #mainvisual img {
+    height: calc(100vh - 60px);     /* 画面の高さをブラウザ下いっぱいまで広げます */
+  }
+}
+#about .content {
+  display: flex;             /* 画像とテキスト（文章）を横並びに配置します */
+  justify-content: center;
+  align-items: center;
+}
+#about img {
+  width: 100px;              /* 画像を丸く切り取ります。丸のサイズは上のwidthとheightで指定します */
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+#about .text {
+  text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+  /*-----------------------------------------------
+  About
+  ------------------------------------------------*/
+  #about .content {
+    flex-direction: column;      /*画像とテキストを縦並びに配置します */
+  }
+  #about img {
+    margin-right: 0;
+  }
+}
+#bicycle ul {
+  display: flex;     /* 画像を横並びに配置します */
+  justify-content: space-between;     /* 両端で揃えます */
+}
+#bicycle li {
+  width: 32%
+}
+@media screen and(max-width: 600px) {
+  /*------------------------------------------------------
+  Bicycle
+  ------------------------------------------------------*/
+  #bicycle ul {
+    flex-direction: column;   /* 画像を縦並びに配置します */
+  }
+  #bicycle li {
+    width: 100%;
+    margin-bottom: 30px;     /* 画像を横幅いっぱいまで表示します */
+  }
+}
+/*---------------------------------------------------------
+  footer
+  -------------------------------------------------------*/
+  #footer {
+    font-size: 0.5rem;
+    padding: 10px 0;
+    text-align: center;
+  }
